@@ -1,7 +1,7 @@
 <template>
   <h3>From APP</h3>
   <Greeting :age="age" />
-  <User :age="age" @age-change="updateAge"/>
+  <User :age="age" @age-change="updateAge" :ageChangeFn="updateAgeCB"/>
 </template>
 
 <script>
@@ -22,6 +22,9 @@ export  default {
   methods: {
     updateAge(num){
       this.age += num
+    },
+    updateAgeCB(num){
+      this.age+= num
     }
   }
 }
